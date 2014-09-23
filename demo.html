@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+	<title>MaskedPassword Demo</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="demo.css" media="screen, projection" />
+	<script type="text/javascript" src="MaskedPassword.js"></script>
+	
+</head>
+
+<body>
+
+
+	<form id="demo-form" action="#">
+		<fieldset>
+			<label for="demo-field"><strong>This is a masked-password field.</strong> Type into the field to see the masking effect:</label>
+			<input type="password" class="password" id="demo-field" name="pword" />
+		</fieldset>
+	</form>
+	<script type="text/javascript">
+	
+		//apply masking to the demo-field
+		//pass the field reference, masking symbol, and character limit
+		new MaskedPassword(document.getElementById("demo-field"), '\u25CF');
+	
+		//test the submitted value
+		document.getElementById('demo-form').onsubmit = function()
+		{
+			alert('pword = "' + this.pword.value + '"');
+			return false;
+		};
+	
+	</script>
+
+
+</body>
+</html>
